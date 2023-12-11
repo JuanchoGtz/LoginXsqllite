@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginXsqllite.Pages.AgregarAlumno"
+             Title="AgregarAlumno">
+    <AbsoluteLayout>
+        <Frame Padding="5,5,0,0"
+                WidthRequest="250"
+                HeightRequest="50"
+                CornerRadius="20"
+                BorderColor="Black"
+                AbsoluteLayout.LayoutBounds="0.5,0.05"
+                AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Entry x:Name="Nombre" 
+                   Placeholder="Nombre" 
+                   WidthRequest="250"
+                   PlaceholderColor="#969696"
+                    Keyboard="Chat"/>
+        </Frame>
+        <Frame Padding="5,5,0,0"
+        WidthRequest="250"
+        HeightRequest="50"
+        CornerRadius="20"
+        BorderColor="Black"
+        AbsoluteLayout.LayoutBounds="0.5,0.15"
+        AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Entry x:Name="ApPat" 
+                   Placeholder="Apellido Paterno" 
+                   WidthRequest="250"
+                   PlaceholderColor="#969696"
+                   Keyboard="Chat" />
+        </Frame>
+        <Frame Padding="5,5,0,0"
+               WidthRequest="250"
+               HeightRequest="50"
+               CornerRadius="20"
+               BorderColor="Black"
+               AbsoluteLayout.LayoutBounds="0.5,0.25"
+               AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Entry x:Name="ApMat" 
+                   Placeholder="Apellido Materno" 
+                   WidthRequest="250"
+                   PlaceholderColor="#969696"
+                   Keyboard="Chat"/>
+        </Frame>
+        <Picker x:Name="picker"
+                SelectedIndex="1"
+             WidthRequest="135"
+             TextColor="#4C0098"
+             Background="#69FFB6"
+             AbsoluteLayout.LayoutBounds="0.5,0.35"
+             AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>ISC701V</x:String>
+                    <x:String>ISC1001V</x:String>
+                    <x:String>ISC401M</x:String>
+                    <x:String>ISC402M</x:String>
+                    <x:String>ISC401V</x:String>
+                    <x:String>ISC201M</x:String>
+                    <x:String>ISC202M</x:String>
+                    <x:String>ISC201V</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+            </Picker>
+        <DatePicker x:Name="datePicker" 
+                    TextColor="#4C0098"
+                    Background="#69FFB6"
+                    WidthRequest="135"
+                    AbsoluteLayout.LayoutBounds="0.5,0.42"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        
+        <Button Text="Agregar Alumno" 
+                Clicked="OnAgregarAlumnoClicked" 
+                TextColor="#4C0098"
+                Background="#69FFB6"
+                WidthRequest="235"
+                CornerRadius="15"
+                AbsoluteLayout.LayoutBounds="0.5,0.49"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Button Text="Ver Alumnos" 
+                Clicked="VerAlumnosClicked"
+                TextColor="#4C0098"
+                Background="#69FFB6"
+                WidthRequest="235"
+                CornerRadius="15"
+                AbsoluteLayout.LayoutBounds="0.5,0.56"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                />
+    </AbsoluteLayout>
+</ContentPage>

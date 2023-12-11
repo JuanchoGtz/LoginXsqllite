@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginXsqllite.Pages.PagePAlumnos"
+             Title="PagePAlumnos">
+    <ScrollView>
+    <AbsoluteLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- Encabezados -->
+                <StackLayout Grid.Row="0" Orientation="Horizontal">
+                    <Label Text="ID  " FontAttributes="Bold" Background="#FFF18E" />
+                    <Label Text="Nombre " FontAttributes="Bold" Background="#FFF18E" />
+                    <Label Text="APaterno " FontAttributes="Bold" Background="#FFF18E"/>
+                    <Label Text="AMaterno  " FontAttributes="Bold" Background="#FFF18E"/>
+                    <Label Text="Grupo  " FontAttributes="Bold" Background="#FFF18E"/>
+                    <Label Text="FNacimiento  " FontAttributes="Bold" Background="#FFF18E" />
+                </StackLayout>
+
+                <!-- Contenido de la tabla -->
+                <CollectionView Grid.Row="1" x:Name="alumnosCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40" />
+                                    <ColumnDefinition Width="40" />
+                                    <ColumnDefinition Width="65" />
+                                    <ColumnDefinition Width="65" />
+                                    <ColumnDefinition Width="65" />
+                                    <ColumnDefinition Width="75" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Text="{Binding Id}" />
+                                <Label Grid.Column="1" Text="{Binding Nombre}" />
+                                <Label Grid.Column="2" Text="{Binding ApPaterno}" />
+                                <Label Grid.Column="3" Text="{Binding ApMaterno}" />
+                                <Label Grid.Column="4" Text="{Binding Grupo}" />
+                                <Label Grid.Column="5" Text="{Binding FechaNac}" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+            <Frame Padding="5,5,0,0"
+                   WidthRequest="250"
+                   HeightRequest="50"
+                   CornerRadius="20"
+                   BorderColor="Black"
+                   AbsoluteLayout.LayoutBounds="0.5,0.35"
+                   AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Entry x:Name="Nombre" 
+                       Placeholder="Nombre" 
+                       WidthRequest="250"
+                       PlaceholderColor="#969696"
+            Keyboard="Chat"/>
+            </Frame>
+            <Frame Padding="5,5,0,0"
+                   WidthRequest="250"
+                   HeightRequest="50"
+                   CornerRadius="20"
+                   BorderColor="Black"
+                   AbsoluteLayout.LayoutBounds="0.5,0.43"
+                   AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Entry x:Name="ApPat" 
+                       Placeholder="Apellido Paterno" 
+                       WidthRequest="250"
+                       PlaceholderColor="#969696"
+           Keyboard="Chat" />
+            </Frame>
+            <Frame Padding="5,5,0,0"
+                   WidthRequest="250"
+                   HeightRequest="50"
+                   CornerRadius="20"
+                   BorderColor="Black"
+                   AbsoluteLayout.LayoutBounds="0.5,0.51"
+                   AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Entry x:Name="ApMat" 
+                       Placeholder="Apellido Materno" 
+                       WidthRequest="250"
+                       PlaceholderColor="#969696"
+                       Keyboard="Chat"/>
+            </Frame>
+            <Picker x:Name="picker"
+                    SelectedIndex="1"
+                    WidthRequest="135"
+                    TextColor="#4C0098"
+                    Background="#FFF18E"
+                    AbsoluteLayout.LayoutBounds="0.5,0.59"
+                    AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>ISC701V</x:String>
+                        <x:String>ISC1001V</x:String>
+                        <x:String>ISC401M</x:String>
+                        <x:String>ISC402M</x:String>
+                        <x:String>ISC401V</x:String>
+                        <x:String>ISC201M</x:String>
+                        <x:String>ISC202M</x:String>
+                        <x:String>ISC201V</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <DatePicker x:Name="datePicker" 
+            TextColor="#4C0098"
+            Background="#FFF18E"
+            WidthRequest="135"
+            AbsoluteLayout.LayoutBounds="0.5,0.67"
+            AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+            <Button Text="Agregar Alumno" 
+                    Clicked="OnAgregarAlumnoClicked" 
+                    TextColor="#4C0098"
+                    Background="#FFF18E"
+                    WidthRequest="235"
+                    CornerRadius="15"
+                    AbsoluteLayout.LayoutBounds="0.5,0.75"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Button x:Name="Recargar"
+                Text="Recargar" 
+                Clicked="Recargar_Clicked" 
+                TextColor="#4C0098"
+                Background="#FFF18E"
+                WidthRequest="235"
+                CornerRadius="15"
+                AbsoluteLayout.LayoutBounds="0.5,0.83"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        </AbsoluteLayout>
+    </ScrollView>
+</ContentPage>

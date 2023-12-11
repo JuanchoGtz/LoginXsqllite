@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Background="Snow"
+             Title="Home"
+             x:Class="LoginXsqllite.MainPage">
+    <AbsoluteLayout Margin="0,0,0,0"
+              Padding="0,0,0,0">
+        <Frame BackgroundColor="White"
+               BorderColor="Transparent"
+               WidthRequest="150"
+               HeightRequest="150"
+               Padding="0,0,0,0"
+               AbsoluteLayout.LayoutBounds="0.5,0.1"
+               AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Image Source="per.png"
+        WidthRequest="150"
+        HeightRequest="150"/>
+        </Frame>
+        <Image Source="contacto.png"
+       AbsoluteLayout.LayoutBounds="0.05,0.35"
+       AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Frame Padding="5,5,0,0"
+               WidthRequest="250"
+               HeightRequest="50"
+               CornerRadius="20"
+               BorderColor="Black"
+               AbsoluteLayout.LayoutBounds="0.5,0.35"
+               AbsoluteLayout.LayoutFlags="PositionProportional">
+        <Entry Placeholder="Nombre de Usuario" 
+               x:Name="UsernameEntry" 
+               PlaceholderColor="#969696"
+               Keyboard="Chat"
+               />
+        </Frame>
+        <Image Source="candado.png"
+               AbsoluteLayout.LayoutBounds="0.05,0.45"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Frame Padding="5,5,0,0"
+       WidthRequest="250"
+       HeightRequest="50"
+       CornerRadius="20"
+       BorderColor="Black"
+       AbsoluteLayout.LayoutBounds="0.5,0.45"
+       AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Entry Placeholder="Contraseña" x:Name="PasswordEntry" IsPassword="True" />
+        </Frame>
+        <Picker x:Name="picker"
+        SelectedIndex="1"
+        WidthRequest="135"
+        Background="#69FFB6"
+        TextColor="Black"
+        AbsoluteLayout.LayoutBounds="0.5,0.55"
+        AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Maestro</x:String>
+                    <x:String>Alumno</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button Text="Iniciar Sesión"
+                TextColor="#4C0098"
+                Background="#69FFB6"
+                WidthRequest="235"
+                CornerRadius="15"
+                Clicked="OnLoginButtonClicked" 
+                AbsoluteLayout.LayoutBounds="0.5,0.63"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Button Text="Crear Usuario"
+                TextColor="#4C0098"
+                Background="#69FFB6"
+                WidthRequest="235"
+                CornerRadius="15"
+                Clicked="CrearClicked"
+                AbsoluteLayout.LayoutBounds="0.5,0.70"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Button x:Name="VerUsuarios"
+                TextColor="#4C0098"
+                Background="#69FFB6"
+                WidthRequest="235"
+                CornerRadius="15"
+                AbsoluteLayout.LayoutBounds="0.5,0.77"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Text="Ver Usuario" Clicked="VerUsuarios_Clicked"/>
+    </AbsoluteLayout>
+</ContentPage>
